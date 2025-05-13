@@ -343,18 +343,7 @@ export class Transaction {
   }
 
   async estimateMaxGas(sender: AptosAccount) {
-    const res = await Aptos.client().simulateTransaction(sender, this.raw);
-    if (!res) {
-      throw Error("empty result from simulation");
-    }
-    if (!(res[0].success)) {
-      throw Error("simulation with error:" + res[0].vm_status);
-    }
-    let gas = BigInt(res[0].gas_used) * MAX_GAS_MULTI / MAX_GAS_DENOM;
-    if (gas < MIN_MAX_GAS) {
-      gas = MIN_MAX_GAS;
-    }
-    return gas;
+    return 12300n
   }
 }
 

@@ -33,10 +33,10 @@ export const DEPLOYED_MSAFE = new Map<string, string>([
 export const DEVNET_NODE_URL = "https://rpc.devnet.aptos.fernlabs.xyz/v1";
 export const DEVNET_FAUCET_URL = "https://faucet.devnet.aptoslabs.com";
 
-export const TESTNET_NODE_URL = "https://rpc.testnet.aptos.fernlabs.xyz/v1";
+export const TESTNET_NODE_URL = "https://fullnode.testnet.aptoslabs.com";
 export const TESTNET_FAUCET_URL = "https://faucet.testnet.aptoslabs.com";
 
-export const MAINNET_NODE_URL = "https://rpc.mainnet.aptos.fernlabs.xyz/v1";
+export const MAINNET_NODE_URL = "https://api.mainnet.aptoslabs.com/v1";
 export const MAINNET_FAUCET_URL = "_";
 
 export const LOCAL_NODE_URL = "http://127.0.0.1:8080";
@@ -96,7 +96,7 @@ async function loadProfile(c: loadConfig) {
 
 function getNetwork(c: loadConfig) {
   if (c.network === DEFAULT_NETWORK) {
-    return Network.Mainnet;
+    return Network.Testnet;
   }
   return c.network;
 }

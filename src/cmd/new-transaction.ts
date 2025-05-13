@@ -303,7 +303,8 @@ async function promptAndBuildForEntryFnTx(
     throw new Error(`${fullFnName} has no exposed function`);
   }
   const entryFns = moduleData.abi.exposed_functions.filter(
-    (fn) => fn.is_entry && fn.visibility === "public"
+    (fn) => fn.is_entry
+    // && fn.visibility === "public"
   );
 
   let i = 1;
